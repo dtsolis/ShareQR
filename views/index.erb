@@ -1,116 +1,116 @@
 <html>
 <head>
-	<title>Share QR | <%=params[:m]%></title>
+    <title>Share QR | <%=params[:m]%></title>
 
-	<meta property="og:site_name" content="Share QR" />
-	<meta property="og:title" content="Share QR | <%=params[:m]%>" />
-	<meta property="og:description" content="Create and share QR Codes." />
-	<meta property="og:url" content="<%=request.env['rack.url_scheme']%>://<%=request.env['HTTP_HOST']%>/" />
-	<meta property="og:type" content="website" />
-	<meta property="og:image" content="<%=request.env['rack.url_scheme']%>://<%=request.env['HTTP_HOST']%>/download?<%=URI.encode_www_form('m' => params[:m]) %>" />
-	<style type="text/css">
-		body {
-			text-align: center;
-			margin: 0 0 60px 0;
-		}
-		footer {
-		    clear: both;
-		    border: 0px;
-		    color: #000;
-		    padding: 0;
-		    text-align: center;
-		    vertical-align: middle;
-		    line-height: normal;
-		    margin: 0;
-		    position: fixed;
-		    bottom: 0px;
-		    width: 100%;
-		    background: #fff;
-		    text-align: right;
-		}
-		footer ul {
-			padding: 0;
-			margin: 0;
-			margin: 12px;
-			color: #2B2C2D;
-		}
-		footer ul li {
-			list-style-type: none;
-			display: inline;
-		}
-		footer ul li:before {
-			content: " | ";
-			font-weight: bold;
-		}
-		footer ul li:first-child:before {
-			content: none;
-		}
-		footer a {
-			color: #888;
-			text-decoration: none;
-		}
-		footer a:hover {
-			text-decoration: underline;
-		}
-		#main-img {
-			margin: 20px 0;
-		}
-		#header {
-			background: #DCDFE0;
-			padding: 20px;
-			color: #2B2C2D;
-		}
-		#qr-tarea {
-			width: 100%;
-			max-width: 500px;
-			min-height: 70px;
-		    font-size: 14px;
-		}
-		.btn {
-		    border: 0px;
-		    background: #000;
-		    padding: 12px;
-		    color: #fff;
-		    font-size: 14px;
-		    cursor: pointer;
-		}
-		.responsiveImage {
-			max-width: 100%; 
-			width: auto; 
-			height: auto;
-		}
-		a.btn {
-			text-decoration: none;
-			border: 1px solid #000;
-			background: #000;
-			color: #fff;
-		}
-		a.btn:hover {
-			background: #fff;
-			color: #000;
-		}
-	</style>
+    <meta property="og:site_name" content="Share QR" />
+    <meta property="og:title" content="Share QR | <%=params[:m]%>" />
+    <meta property="og:description" content="Create and share QR Codes." />
+    <meta property="og:url" content="<%=request.env['rack.url_scheme']%>://<%=request.env['HTTP_HOST']%>/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="<%=request.env['rack.url_scheme']%>://<%=request.env['HTTP_HOST']%>/download?<%=URI.encode_www_form('m' => params[:m]) %>" />
+    <style type="text/css">
+        body {
+            text-align: center;
+            margin: 0 0 60px 0;
+        }
+        footer {
+            clear: both;
+            border: 0px;
+            color: #000;
+            padding: 0;
+            text-align: center;
+            vertical-align: middle;
+            line-height: normal;
+            margin: 0;
+            position: fixed;
+            bottom: 0px;
+            width: 100%;
+            background: #fff;
+            text-align: right;
+        }
+        footer ul {
+            padding: 0;
+            margin: 0;
+            margin: 12px;
+            color: #2B2C2D;
+        }
+        footer ul li {
+            list-style-type: none;
+            display: inline;
+        }
+        footer ul li:before {
+            content: " | ";
+            font-weight: bold;
+        }
+        footer ul li:first-child:before {
+            content: none;
+        }
+        footer a {
+            color: #888;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        #main-img {
+            margin: 20px 0;
+        }
+        #header {
+            background: #DCDFE0;
+            padding: 20px;
+            color: #2B2C2D;
+        }
+        #qr-tarea {
+            width: 100%;
+            max-width: 500px;
+            min-height: 70px;
+            font-size: 14px;
+        }
+        .btn {
+            border: 0px;
+            background: #000;
+            padding: 12px;
+            color: #fff;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .responsiveImage {
+            max-width: 100%; 
+            width: auto; 
+            height: auto;
+        }
+        a.btn {
+            text-decoration: none;
+            border: 1px solid #000;
+            background: #000;
+            color: #fff;
+        }
+        a.btn:hover {
+            background: #fff;
+            color: #000;
+        }
+    </style>
 </head>
 <body>
-	<div id="header">
-		<h1>Share QR</h1>
-		<form action="/">
-			<textarea id="qr-tarea" placeholder="Write something and hit the button below..." name="m"><%= params[:m] %></textarea>
-			<br/><br/>
-			<input class="btn" type="submit" value="Generate QR Code" />
-		</form>
-	</div>
-	<div>
-		<img id="main-img" class="responsiveImage" src="<%= @img.to_data_url unless @img.nil? %>"/>
+    <div id="header">
+        <h1>Share QR</h1>
+        <form action="/">
+            <textarea id="qr-tarea" placeholder="Write something and hit the button below..." name="m"><%= params[:m] %></textarea>
+            <br/><br/>
+            <input class="btn" type="submit" value="Generate QR Code" />
+        </form>
+    </div>
+    <div>
+        <img id="main-img" class="responsiveImage" src="<%= @img.to_data_url unless @img.nil? %>"/>
 
-		<% if @img.nil? == false %>
-			<br/><br/>
-			<a class="btn" href="/download?<%=URI.encode_www_form('m' => params[:m]) %>">&darr; Download Image</a>
-		<% end %>
-	</div>
+        <% if @img.nil? == false %>
+            <br/><br/>
+            <a class="btn" href="/download?<%=URI.encode_www_form('m' => params[:m]) %>">&darr; Download Image</a>
+        <% end %>
+    </div>
 
-	<footer>
-		<ul><li>by <a href="https://github.com/dtsolis">dtsolis</a></li></ul>
-	</footer>
+    <footer>
+        <ul><li>by <a href="https://github.com/dtsolis">dtsolis</a></li></ul>
+    </footer>
 </body>
 </html>
